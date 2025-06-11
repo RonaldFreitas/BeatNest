@@ -53,3 +53,45 @@ const CustomDrawer = (props) => {
     </DrawerContentScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  drawerContent: {
+    padding: 20,
+  },
+  profileContainer: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  avatar: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    marginBottom: 10,
+  },
+  username: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  linksContainer: {
+    marginTop: 10,
+  },
+  link: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 10,
+  },
+  linkText: {
+    fontSize: 16,
+    marginLeft: 10,
+  },
+  footer: {
+    padding: 20,
+    borderTopWidth: 1,
+    borderColor: '#ccc',
+  },
+});
+
+export default CustomDrawer;

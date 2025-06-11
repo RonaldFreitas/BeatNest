@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Alert } from 'react-native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
+import { Ionicons } from '@expo/vector-icons';
 
 const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -27,12 +28,14 @@ const RegisterScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <Ionicons name="star-outline" size={64} color="#00FFF7" />
       <Text style={styles.logo}>BeatNest</Text>
       <Text style={styles.title}>Cadastre-se para começar a escutar</Text>
 
       <TextInput
         placeholder="Email"
         style={styles.input}
+        placeholderTextColor="#ccc"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
@@ -40,6 +43,7 @@ const RegisterScreen = ({ navigation }) => {
       />
       <TextInput
         placeholder="Senha"
+        placeholderTextColor="#ccc"
         style={styles.input}
         value={password}
         onChangeText={setPassword}
@@ -47,7 +51,7 @@ const RegisterScreen = ({ navigation }) => {
       />
 
       {loading ? (
-        <ActivityIndicator size="large" color="#00d4ff" />
+        <ActivityIndicator size="large" color="#00FFF7" />
       ) : (
         <TouchableOpacity style={styles.button} onPress={handleRegister}>
           <Text style={styles.buttonText}>Cadastrar</Text>
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
   logo: {
     fontSize: 40,
     fontWeight: 'bold',
-    color: '#00d4ff',
+    color: '#00FFF7',
     marginBottom: 20,
   },
   title: {
@@ -86,14 +90,14 @@ const styles = StyleSheet.create({
   input: {
     width: '100%',
     height: 50,
-    backgroundColor: '#1e1e1e',
+    backgroundColor: '#1a1a1a',
     color: '#fff',
     paddingHorizontal: 15,
     borderRadius: 10,
     marginBottom: 15,
   },
   button: {
-    backgroundColor: '#00d4ff',
+    backgroundColor: '#00FFF7',
     paddingVertical: 15,
     borderRadius: 10,
     width: '100%',

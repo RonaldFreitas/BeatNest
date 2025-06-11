@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -22,6 +23,7 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Ionicons name="star-outline" size={64} color="#00FFF7" />
       <Text style={styles.titulo}>Entrar no BeatNest</Text>
 
       <TextInput
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   titulo: {
-    color: '#00FFFF',
+    color: '#00FFF7',
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 40,
@@ -80,7 +82,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   botao: {
-    backgroundColor: '#00FFFF',
+    backgroundColor: '#00FFF7',
     padding: 15,
     borderRadius: 8,
     width: '100%',
@@ -92,7 +94,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   link: {
-    color: '#00FFFF',
+    color: '#00FFF7',
     marginTop: 20,
   },
   erro: {
